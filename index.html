@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>E-Store</title>
+    <!-- font-awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <!-- Bootstrap CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header>
+      <!-- Start Free Shipping Info -->
+      <div class="container-fluid free-shipping">
+        <p>
+          Free delevery for orders over
+          <span class="text-clipped">$100</span>
+        </p>
+      </div>
+      <!-- End Free Shipping Info -->
+      <!-- Start Logo, Search-bar, Account Icons -->
+      <div class="container py-3">
+        <div class="row align-items-center">
+          <!-- start logo -->
+          <div class="col-6 col-md-3 col-lg-2 order-1">
+            <a class="logo text-clipped" href="index.html">E-STORE</a>
+          </div>
+          <!-- end logo -->
+          <!-- start search-bar -->
+          <div class="col-12 col-md-5 order-3 order-md-2">
+            <form
+              action="results.php"
+              class="search-form d-flex align-items-center justify-content-center"
+            >
+              <input
+                type="text"
+                name="search"
+                placeholder="ex: category, brand, model"
+              />
+              <button type="submit">
+                <i class="fas fa-search medium-icon text-clipped"></i>
+              </button>
+            </form>
+          </div>
+          <!-- end search-bar -->
+          <!-- start user && acount info -->
+          <div
+            class="col-6 col-md-4 col-lg-5 order-2 order-md-3 d-flex align-items-center justify-content-around top-icons"
+          >
+            <!-- user info -->
+            <div class="d-flex align-items-center justify-content-center drop">
+              <i class="fa fa-user big-icon text-clipped"></i>
+              <p class="d-none d-lg-block">
+                account
+              </p>
+              <i
+                class="fas fa-chevron-down chevron-down small-icon d-none d-lg-block"
+              ></i>
+              <!-- dropdown list -->
+              <div class="dropdown-list">
+                <ul>
+                  <li
+                    class="d-flex justify-content-between align-items-center list"
+                  >
+                    <i class="fas fa-lock medium-icon text-clipped"></i>
+                    <a class="medium-link pl-1" href="login.php"
+                      >Your Account</a
+                    >
+                  </li>
+                  <li
+                    class="d-flex justify-content-between align-items-center list"
+                  >
+                    <i class="fas fa-user-plus medium-icon text-clipped"></i>
+                    <a class="medium-link pl-1" href="register.php"
+                      >New Account</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- favourite info -->
+            <div class="d-flex align-items-center justify-content-center">
+              <i class="fa fa-heart big-icon text-clipped"></i>
+              <p class="d-none d-lg-block">
+                favourite
+              </p>
+            </div>
+            <!-- cart info -->
+            <div class="d-flex align-items-center justify-content-center drop">
+              <div class="cart">
+                <i class="fas fa-shopping-cart big-icon text-clipped"></i>
+                <span class="badge">3</span>
+              </div>
+              <p class="d-none d-lg-block">
+                cart: 00.00
+              </p>
+              <i
+                class="fas fa-chevron-down chevron-down d-none d-lg-block small-icon"
+              ></i>
+              <!-- dropdown list -->
+              <div class="dropdown-list">
+                <ul>
+                  <li
+                    class="d-flex justify-content-between align-items-center list"
+                  >
+                    <i
+                      class="fas fa-shopping-cart text-clipped medium-icon"
+                    ></i>
+                    <a class="medium-link pl-1" href="login.php">View cart</a>
+                  </li>
+                  <li
+                    class="d-flex justify-content-between align-items-center list"
+                  >
+                    <i
+                      class="fas fa-cart-arrow-down text-clipped medium-icon"
+                    ></i>
+                    <a class="medium-link pl-1" href="register.php">Checkout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- mobile nav icon -->
+            <div
+              class="d-flex align-items-center justify-content-center mobile-icon"
+            >
+              <i
+                class="fa fa-align-justify big-icon text-clipped d-block d-md-none"
+              ></i>
+            </div>
+          </div>
+          <!-- end user && account info -->
+        </div>
+      </div>
+      <!-- End Logo, Search-bar, Account Icons -->
+    </header>
+    <!-- End Header -->
+    <!-- Start Main-Nav -->
+    <section class="main-navbar d-none d-md-block">
+      <div class="container">
+        <div class="row">
+          <!-- Start Categories Menu -->
+          <div class="col-3 col-md-4 col-lg-3 categories py-2">
+            <div
+              class="categories d-flex align-items-center justify-content-between"
+            >
+              <p class="pl-2">CATEGORIES</p>
+              <i class="fa fa-align-justify pr-2 medium-icon"></i>
+            </div>
+          </div>
+          <!-- Start Main Nav Link -->
+          <div class="col-9 col-md-8 col-lg-9">
+            <ul class="d-flex align-items-center justify-content-start py-2">
+              <li class="big-list">
+                <a class="big-link" href="#">Newsletter</a>
+              </li>
+              <li class="big-list"><a class="big-link" href="#">Returns</a></li>
+              <li class="big-list">
+                <a class="big-link" href="#">Perfect gifts</a>
+              </li>
+              <li class="big-list">
+                <a class="big-link" href="#">Daily offer</a>
+              </li>
+              <li class="big-list">
+                <a class="big-link" href="#">Populars</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Main-Nav -->
+    <!-- Start Side Navigation & Slider -->
+    <section class="side-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-4 col-lg-3 categories-nav p-0 d-md-block">
+            <ul class="side-nav-list">
+              <div
+                class="p-3 d-flex align-items-center justify-content-between bg-dark d-md-none"
+              >
+                <p class="text-clipped">CATEGORIES</p>
+                <i
+                  class="fas fa-times big-icon text-clipped close-mobile-nav"
+                ></i>
+              </div>
+              <li
+                class="d-flex align-items-center justify-content-between px-2 py-3 border-bottom side-links"
+              >
+                <a class="medium-link" href="#">Jwellery & Bags</a>
+                <i class="fas fa-chevron-right small-icon"></i>
+                <div class="category-sub-link">
+                  <div
+                    class="close-mobile-nav-sublink d-flex p-3 align-items-center justify-content-between bg-dark d-md-none"
+                  >
+                    <p class="text-clipped">Jwellery & Bags</p>
+                    <i
+                      class="fas fa-chevron-left big-icon text-clipped close-sub-links"
+                    ></i>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-around flex-column flex-sm-row"
+                  >
+                    <ul class="pt-3">
+                      <p>Category women</p>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <hr class="hr" />
+                    </ul>
+                    <ul class="pt-3">
+                      <p>Category women</p>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <hr class="hr" />
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="d-flex align-items-center justify-content-between px-2 py-3 border-bottom side-links"
+              >
+                <a class="medium-link" href="#">BABY'S CLOTHING</a>
+                <i class="fas fa-chevron-right small-icon"></i>
+                <div class="category-sub-link">
+                  <div
+                    class="close-mobile-nav-sublink d-flex p-3 align-items-center justify-content-between bg-dark d-md-none"
+                  >
+                    <p class="text-clipped">BABY</p>
+                    <i
+                      class="fas fa-chevron-left big-icon text-clipped close-sub-links"
+                    ></i>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-around flex-column flex-sm-row"
+                  >
+                    <ul class="pt-3">
+                      <p>Category women</p>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <hr class="hr" />
+                    </ul>
+                    <ul class="pt-3">
+                      <p>Category women</p>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <hr class="hr" />
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="d-flex align-items-center justify-content-between px-2 py-3 border-bottom side-links"
+              >
+                <a class="medium-link" href="#">TEEN'S CLOTHING</a>
+                <i class="fas fa-chevron-right small-icon"></i>
+                <div class="category-sub-link">
+                  <div
+                    class="close-mobile-nav-sublink d-flex p-3 align-items-center justify-content-between bg-dark d-md-none"
+                  >
+                    <p class="text-clipped">TEEN</p>
+                    <i
+                      class="fas fa-chevron-left big-icon text-clipped close-sub-links"
+                    ></i>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-around flex-column flex-sm-row"
+                  >
+                    <ul class="pt-3">
+                      <p>Category women</p>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <hr class="hr" />
+                    </ul>
+                    <ul class="pt-3">
+                      <p>Category women</p>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <hr class="hr" />
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="d-flex align-items-center justify-content-between px-2 py-3 border-bottom side-links"
+              >
+                <a class="medium-link" href="#">WOMEN'S CLOTHING</a>
+                <i class="fas fa-chevron-right small-icon"></i>
+                <div class="category-sub-link">
+                  <div
+                    class="close-mobile-nav-sublink d-flex p-3 align-items-center justify-content-between bg-dark d-md-none"
+                  >
+                    <p class="text-clipped">WOMEN</p>
+                    <i
+                      class="fas fa-chevron-left big-icon text-clipped close-sub-links"
+                    ></i>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-around flex-column flex-sm-row"
+                  >
+                    <ul class="pt-3">
+                      <p>Category women</p>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <hr class="hr" />
+                    </ul>
+                    <ul class="pt-3">
+                      <p>Category women</p>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <hr class="hr" />
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="d-flex align-items-center justify-content-between px-2 py-3 border-bottom side-links"
+              >
+                <a class="medium-link" href="#">WOMEN'S CLOTHING</a>
+                <i class="fas fa-chevron-right small-icon"></i>
+                <div class="category-sub-link">
+                  <div
+                    class="close-mobile-nav-sublink d-flex p-3 align-items-center justify-content-between bg-dark d-md-none"
+                  >
+                    <p class="text-clipped">WOMEN</p>
+                    <i
+                      class="fas fa-chevron-left big-icon text-clipped close-sub-links"
+                    ></i>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-around flex-column flex-sm-row"
+                  >
+                    <ul class="pt-3">
+                      <p>Category women</p>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <hr class="hr" />
+                    </ul>
+                    <ul class="pt-3">
+                      <p>Category women</p>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <li class="py-1">
+                        <a class="medium-link" href="#">category link women</a>
+                      </li>
+                      <hr class="hr" />
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="px-2 py-3 side-links">
+                <a class="medium-link" href="#">VIEW ALL</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-8 col-lg-9 p-0">
+            <div class="btn-left">
+              <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="btn-right">
+              <i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="slide slide1">
+              <div class="slide-content">
+                <img
+                  class="m-0 p-0 img-fluid w-100"
+                  src="./img/3.jpeg"
+                  alt=""
+                />
+                <div class="slider-content">
+                  <div class="inner-content d-flex flex-column">
+                    <span class="big-title text-clipped">Best Offers</span>
+                    <a href="#" class="custom-btn">see deal</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide slide2">
+              <div class="slide-content">
+                <img
+                  class="m-0 p-0 img-fluid w-100"
+                  src="./img/1.jpeg"
+                  alt=""
+                />
+                <div class="slider-content">
+                  <div class="inner-content d-flex flex-column">
+                    <span class="big-title text-clipped">Best Products</span>
+                    <a href="#" class="custom-btn">see deal</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide slide3">
+              <div class="slide-content">
+                <img
+                  class="m-0 p-0 img-fluid w-100"
+                  src="./img/2.jpeg"
+                  alt=""
+                />
+                <div class="slider-content">
+                  <div class="inner-content d-flex flex-column">
+                    <span class="big-title text-clipped">Best Services</span>
+                    <a href="#" class="custom-btn">see deal</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Side Navigation -->
+    <!-- Start Services Section -->
+    <section class="services">
+      <div class="container my-5">
+        <div class="row text-center">
+          <div class="col-12 col-sm-6 col-md-3 mb-5">
+            <div class="our-services-icon d-flex mb-3 mx-auto">
+              <i class="fas fa-shipping-fast text-clipped big-icon m-auto"></i>
+            </div>
+            <div class="our-services-description">
+              <h2 class="medium-title">Free Shipping</h2>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 mb-5">
+            <div class="our-services-icon d-flex mb-3 mx-auto">
+              <i class="fas fa-sync text-clipped big-icon m-auto"></i>
+            </div>
+            <div class="our-services-description">
+              <h2 class="medium-title">Free return</h2>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 mb-5">
+            <div class="our-services-icon d-flex mb-3 mx-auto">
+              <i class="fas fa-headset text-clipped big-icon m-auto"></i>
+            </div>
+            <div class="our-services-description">
+              <h2 class="medium-title">24/7 services</h2>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 mb-5">
+            <div class="our-services-icon d-flex mb-3 mx-auto">
+              <i class="fas fa-credit-card text-clipped big-icon m-auto"></i>
+            </div>
+            <div class="our-services-description">
+              <h2 class="medium-title">monthly payment</h2>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Services Section -->
+    <!-- Start Latest Products -->
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mb-3">
+            <h2 class="medium-title">Latest Products</h2>
+            <span class="custom-border"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+            <div class="product-image">
+              <img
+                class="img-fluid  w-100"
+                src="./img/product-1.jpeg"
+                alt=""
+              />
+              <div class="product-discount">
+                <p class="new-product">New</p>
+                <p class="discount">-20%</p>
+              </div>
+              <div class="info">
+                <div
+                  class="view d-flex align-items-center justify-content-center"
+                >
+                  <i class="fas fa-search-plus small-icon pr-1"></i>
+                  <a href="indsc.html">quick view</a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="details d-flex align-items-center justify-content-between"
+            >
+              <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+              <div class="d-flex text-clipped">
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+              </div>
+            </div>
+            <p class="text-capitalize pb-2">product name here</p>
+            <div
+              class="cart-details d-flex align-items-center justify-content-between"
+            >
+              <div class="d-flex align-items-center justify-content-between">
+                <a class="icon-btn" href="#"
+                  ><i class="fas fa-heart small-icon"></i
+                ></a>
+              </div>
+              <div
+                class="small-btn d-flex align-items-center justify-content-between"
+              >
+                <i class="fas fa-cart-plus small-icon"></i>
+                <a href="#" class="pl-1">add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+            <div class="product-image">
+              <img
+                class="img-fluid  w-100"
+                src="./img/product-2.jpg"
+                alt=""
+              />
+              <div class="product-discount">
+                <p class="new-product">New</p>
+                <p class="discount">-20%</p>
+              </div>
+              <div class="info">
+                <div
+                  class="view d-flex align-items-center justify-content-center"
+                >
+                  <i class="fas fa-search-plus small-icon pr-1"></i>
+                  <a href="indsc.html">quick view</a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="details d-flex align-items-center justify-content-between"
+            >
+              <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+              <div class="d-flex text-clipped">
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+              </div>
+            </div>
+            <p class="text-capitalize pb-2">product name here</p>
+            <div
+              class="cart-details d-flex align-items-center justify-content-between"
+            >
+              <div class="d-flex align-items-center justify-content-between">
+                <a class="icon-btn" href="#"
+                  ><i class="fas fa-heart small-icon"></i
+                ></a>
+              </div>
+              <div
+                class="small-btn d-flex align-items-center justify-content-between"
+              >
+                <i class="fas fa-cart-plus small-icon"></i>
+                <a href="#" class="pl-1">add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+            <div class="product-image">
+              <img
+                class="img-fluid  w-100"
+                src="./img/product-3.jpeg"
+                alt=""
+              />
+              <div class="product-discount">
+                <p class="new-product">New</p>
+                <p class="discount">-20%</p>
+              </div>
+              <div class="info">
+                <div
+                  class="view d-flex align-items-center justify-content-center"
+                >
+                  <i class="fas fa-search-plus small-icon pr-1"></i>
+                  <a href="indsc.html">quick view</a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="details d-flex align-items-center justify-content-between"
+            >
+              <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+              <div class="d-flex text-clipped">
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+              </div>
+            </div>
+            <p class="text-capitalize pb-2">product name here</p>
+            <div
+              class="cart-details d-flex align-items-center justify-content-between"
+            >
+              <div class="d-flex align-items-center justify-content-between">
+                <a class="icon-btn" href="#"
+                  ><i class="fas fa-heart small-icon"></i
+                ></a>
+              </div>
+              <div
+                class="small-btn d-flex align-items-center justify-content-between"
+              >
+                <i class="fas fa-cart-plus small-icon"></i>
+                <a href="#" class="pl-1">add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+            <div class="product-image">
+              <img
+                class="img-fluid  w-100"
+                src="./img/product-4.jpeg"
+                alt=""
+              />
+              <div class="product-discount">
+                <p class="new-product">New</p>
+                <p class="discount">-20%</p>
+              </div>
+              <div class="info">
+                <div
+                  class="view d-flex align-items-center justify-content-center"
+                >
+                  <i class="fas fa-search-plus small-icon pr-1"></i>
+                  <a href="indsc.html">quick view</a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="details d-flex align-items-center justify-content-between"
+            >
+              <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+              <div class="d-flex text-clipped">
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+              </div>
+            </div>
+            <p class="text-capitalize pb-2">product name here</p>
+            <div
+              class="cart-details d-flex align-items-center justify-content-between"
+            >
+              <div class="d-flex align-items-center justify-content-between">
+                <a class="icon-btn" href="#"
+                  ><i class="fas fa-heart small-icon"></i
+                ></a>
+              </div>
+              <div
+                class="small-btn d-flex align-items-center justify-content-between"
+              >
+                <i class="fas fa-cart-plus small-icon"></i>
+                <a href="#" class="pl-1">add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+            <div class="product-image">
+              <img
+                class="img-fluid  w-100"
+                src="./img/product-5.jpeg"
+                alt=""
+              />
+              <div class="product-discount">
+                <p class="new-product">New</p>
+                <p class="discount">-20%</p>
+              </div>
+              <div class="info">
+                <div
+                  class="view d-flex align-items-center justify-content-center"
+                >
+                  <i class="fas fa-search-plus small-icon pr-1"></i>
+                  <a href="indsc.html">quick view</a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="details d-flex align-items-center justify-content-between"
+            >
+              <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+              <div class="d-flex text-clipped">
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+              </div>
+            </div>
+            <p class="text-capitalize pb-2">product name here</p>
+            <div
+              class="cart-details d-flex align-items-center justify-content-between"
+            >
+              <div class="d-flex align-items-center justify-content-between">
+                <a class="icon-btn" href="#"
+                  ><i class="fas fa-heart small-icon"></i
+                ></a>
+              </div>
+              <div
+                class="small-btn d-flex align-items-center justify-content-between"
+              >
+                <i class="fas fa-cart-plus small-icon"></i>
+                <a href="#" class="pl-1">add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+            <div class="product-image">
+              <img
+                class="img-fluid  w-100"
+                src="./img/product-6.jpeg"
+                alt=""
+              />
+              <div class="product-discount">
+                <p class="new-product">New</p>
+                <p class="discount">-20%</p>
+              </div>
+              <div class="info">
+                <div
+                  class="view d-flex align-items-center justify-content-center"
+                >
+                  <i class="fas fa-search-plus small-icon pr-1"></i>
+                  <a href="indsc.html">quick view</a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="details d-flex align-items-center justify-content-between"
+            >
+              <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+              <div class="d-flex text-clipped">
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+                <i class="fas fa-star small-icon"></i>
+              </div>
+            </div>
+            <p class="text-capitalize pb-2">product name here</p>
+            <div
+              class="cart-details d-flex align-items-center justify-content-between"
+            >
+              <div class="d-flex align-items-center justify-content-between">
+                <a class="icon-btn" href="#"
+                  ><i class="fas fa-heart small-icon"></i
+                ></a>
+              </div>
+              <div
+                class="small-btn d-flex align-items-center justify-content-between"
+              >
+                <i class="fas fa-cart-plus small-icon"></i>
+                <a href="#" class="pl-1">add to cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Latest Products -->
+    <!-- Start Daily Offer -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <h2 class="medium-title">Daily Offer</h2>
+                    <span class="custom-border"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-7.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-8.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-9.jpg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-0.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-11.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-12.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Daily Offer -->
+    <!-- Start Collection Offer -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-8">
+                    <div class="new-collection">
+                        <img class="img-fluid w-100" src="./img/new-collection.jpeg" alt="">
+                        <div class="collection-content">
+                            <div class="collection-inner">
+                                <h2 class="big-title text-clipped">Hot Deals</h2>
+                                <h2 class="mb-3 medium-title text-white">Up to 50% off</h2>
+                                <a class="custom-btn" href="#">Shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="col-12 col-md-12 col-lg-4 mt-4 mt-lg-0 d-flex flex-column flex-lg-column flex-md-row justify-content-between">
+                    <div class="top mb-4 mb-md-0">
+                        <div class="new-collection">
+                            <img class="img-fluid w-100" src="./img/new-collection-1.jpeg" alt="">
+                            <div class="collection-content">
+                                <div class="collection-inner">
+                                    <h2 class="medium-title text-clipped">New</h2>
+                                    <h2 class="mb-3 medium-title text-white">Winter Collection</h2>
+                                    <a class="custom-btn" href="#">Shop now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top">
+                        <div class="new-collection">
+                            <img class="img-fluid w-100" src="./img/new-collection-2.jpeg" alt="">
+                            <div class="collection-content">
+                                <div class="collection-inner">
+                                    <h2 class="medium-title text-clipped">Next</h2>
+                                    <h2 class="mb-3 medium-title text-white">Seasson Collection</h2>
+                                    <a class="custom-btn" href="#">Shop now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Collection Offer -->
+    <!-- Start Picked For You -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <h2 class="medium-title">Picked For You</h2>
+                    <span class="custom-border"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-13.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-14.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-15.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-16.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-17.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-18.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End End Picked For You -->
+    <!-- Start Newsletter -->
+    <section class="newsletter my-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img class="img-fluid w-100" src="./img/newsletter.jpeg" alt="">
+                </div>
+                <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                    <h2 class="medium-title pt-4 text-white">Keep in touch with E-STORE, subscribe to our newsletter and find all about
+                        our
+                        promotions</h2>
+                    <form action="" method="POST"
+                        class="newslleter-form d-flex flex-column flex-lg-row align-items-center justify-content-between">
+                        <div class="d-md-flex flex-lg-row justify-content-between justify-content-lg-around">
+                            <input type="email" name="email" placeholder="email">
+                            <input type="text" name="name" placeholder="name">
+                        </div>
+                        <button type="submit" name="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Newsletter -->
+    <!-- Start Returns Products-->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <h2 class="medium-title">Latest Products</h2>
+                    <span class="custom-border"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-20.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-21.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-11.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-7.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-8.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 product">
+                    <div class="product-image">
+                        <img class="img-fluid  w-100" src="./img/product-4.jpeg" alt="">
+                        <div class="product-discount">
+                            <p class="new-product">New</p>
+                            <p class="discount">-20%</p>
+                        </div>
+                        <div class="info">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <i class="fas fa-search-plus small-icon pr-1"></i>
+                                <a href="indsc.html">quick view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details d-flex align-items-center justify-content-between">
+                        <p class="price">$32.5 <del class="price-del">$40.12</del></p>
+                        <div class="d-flex text-clipped">
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                            <i class="fas fa-star small-icon"></i>
+                        </div>
+                    </div>
+                    <p class="text-capitalize pb-2">product name here</p>
+                    <div class="cart-details d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a class="icon-btn" href="#"><i class="fas fa-heart small-icon"></i></a>
+                        </div>
+                        <div class="small-btn d-flex align-items-center justify-content-between">
+                            <i class="fas fa-cart-plus small-icon"></i>
+                            <a href="#" class="pl-1">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Returns Products -->
+    <!-- Start Footer -->
+    <footer class="footer pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 py-3">
+                    <h2 class="logo text-clipped">E-Store</h2>
+                    <p>The best online clothing store from 2020. Choose from over 50 brands at the best price.</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 py-3 text-white">
+                    <div class="footer-title mb-3">
+                        <h5>Customer Services</h5>
+                        <span class="custom-border"></span>
+                    </div>
+                    <ul>
+                        <li><a href="#">Your E-Store account</a></li>
+                        <li><a href="#">30 days return</a></li>
+                        <li><a href="#">how do you buy</a></li>
+                        <li><a href="#">delivery services</a></li>
+                        <li><a href="#">check for finance</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 py-3 text-white">
+                    <div class="footer-title mb-3">
+                        <h5>Customer Services</h5>
+                        <span class="custom-border"></span>
+                    </div>
+                    <ul>
+                        <li><a href="#">Your E-Store account</a></li>
+                        <li><a href="#">30 days return</a></li>
+                        <li><a href="#">how do you buy</a></li>
+                        <li><a href="#">delivery services</a></li>
+                        <li><a href="#">check for finance</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 py-3 text-white">
+                    <div class="footer-title mb-3">
+                        <h5>Customer Services</h5>
+                        <span class="custom-border"></span>
+                    </div>
+                    <ul>
+                        <li><a href="#">Your E-Store account</a></li>
+                        <li><a href="#">30 days return</a></li>
+                        <li><a href="#">how do you buy</a></li>
+                        <li><a href="#">delivery services</a></li>
+                        <li><a href="#">check for finance</a></li>
+                    </ul>
+                </div>
+                <div class="container pb-3">
+                    <div class="text-center sub-footer">
+                        <hr class="hr bg-light">
+                        <p>
+                            E-STORE best clothing options from &copy;2020 | Online Store Made By
+                            <span class="text-clipped">Florin Zarafu</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <!-- javascript links -->
+    <script src="./js/mobileNav.js"></script>
+    <script src="./js/slider.js"></script>
+  </body>
+</html>
